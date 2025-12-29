@@ -1,0 +1,592 @@
+{###########################################################################}
+{############################   1. Variables   #############################}
+{###########################################################################}
+html,
+body {
+  position: relative;
+  height: 100%;
+} 
+/* 1a. Containers */
+
+{% set container_width = theme.spacing.max_width ~ 'px' %}
+{% set dnd_section_padding = theme.spacing.desktop_section_top_bottom ~ 'px' %}
+
+/* 1b. Colors */
+
+{% set primary_color = theme.global_colors.primary_color.color  %}
+{% set secondary_color = theme.global_colors.secondary_color.color %}
+{% set odd_background_color = theme.global_colors.tertiary_color.color %}
+{% set even_background_color = theme.global_colors.body_background_color.color %}
+
+/* 1c. Typography */
+
+/* Typography */
+
+/*Heading-1 */
+{% set theme_h1_color = theme.typography.headings.heading_one.font.color %}
+{% set theme_h1_font = theme.typography.headings.heading_one.font.font %}
+{% set theme_h1_fontsize = theme.typography.headings.heading_one.font.size.value ~ 'px' %}
+{% set theme_h1_fontstyle = theme.typography.headings.heading_one.font.styles|attr('font-style') %}
+{% set theme_h1_fontweight = theme.typography.headings.heading_one.font.styles|attr('font-weight') %}
+{% set theme_h1_textdecoration = theme.typography.headings.heading_one.font.styles|attr('text-decoration') %}
+{% set theme_h1_lineheight = theme.typography.headings.heading_one.line_height %}
+{% set theme_h1_letterspacing = theme.typography.headings.heading_one.letter_spacing %}
+{% set theme_h1_texttransform = theme.typography.headings.heading_one.text_transform %}
+
+
+/*Heading-2 */
+{% set theme_h2_color = theme.typography.headings.heading_two.font.color %}
+{% set theme_h2_font = theme.typography.headings.heading_two.font.font %}
+{% set theme_h2_fontsize = theme.typography.headings.heading_two.font.size.value ~ 'px' %}
+{% set theme_h2_fontstyle = theme.typography.headings.heading_two.font.styles|attr('font-style') %}
+{% set theme_h2_fontweight = theme.typography.headings.heading_two.font.styles|attr('font-weight') %}
+{% set theme_h2_textdecoration = theme.typography.headings.heading_two.font.styles|attr('text-decoration') %}
+{% set theme_h2_lineheight = theme.typography.headings.heading_two.line_height %}
+{% set theme_h2_letterspacing = theme.typography.headings.heading_two.letter_spacing %}
+{% set theme_h2_texttransform = theme.typography.headings.heading_two.text_transform %}
+
+/*Heading-3 */
+{% set theme_h3_color = theme.typography.headings.heading_three.font.color %}
+{% set theme_h3_font = theme.typography.headings.heading_three.font.font %}
+{% set theme_h3_fontsize = theme.typography.headings.heading_three.font.size.value ~ 'px' %}
+{% set theme_h3_fontstyle = theme.typography.headings.heading_three.font.styles|attr('font-style') %}
+{% set theme_h3_fontweight = theme.typography.headings.heading_three.font.styles|attr('font-weight') %}
+{% set theme_h3_textdecoration = theme.typography.headings.heading_three.font.styles|attr('text-decoration') %}
+{% set theme_h3_lineheight = theme.typography.headings.heading_three.line_height %}
+{% set theme_h3_letterspacing = theme.typography.headings.heading_three.letter_spacing %}
+{% set theme_h3_texttransform = theme.typography.headings.heading_three.text_transform %}
+
+/*Heading-4 */
+{% set theme_h4_color = theme.typography.headings.heading_four.font.color %}
+{% set theme_h4_font = theme.typography.headings.heading_four.font.font %}
+{% set theme_h4_fontsize = theme.typography.headings.heading_four.font.size.value ~ 'px' %}
+{% set theme_h4_fontstyle = theme.typography.headings.heading_four.font.styles|attr('font-style') %}
+{% set theme_h4_fontweight = theme.typography.headings.heading_four.font.styles|attr('font-weight') %}
+{% set theme_h4_textdecoration = theme.typography.headings.heading_four.font.styles|attr('text-decoration') %}
+{% set theme_h4_lineheight = theme.typography.headings.heading_four.line_height %}
+{% set theme_h4_letterspacing = theme.typography.headings.heading_four.letter_spacing %}
+{% set theme_h4_texttransform = theme.typography.headings.heading_four.text_transform %}
+
+/*Heading-5 */
+{% set theme_h5_color = theme.typography.headings.heading_five.font.color %}
+{% set theme_h5_font = theme.typography.headings.heading_five.font.font %}
+{% set theme_h5_fontsize = theme.typography.headings.heading_five.font.size.value ~ 'px' %}
+{% set theme_h5_fontstyle = theme.typography.headings.heading_five.font.styles|attr('font-style') %}
+{% set theme_h5_fontweight = theme.typography.headings.heading_five.font.styles|attr('font-weight') %}
+{% set theme_h5_textdecoration = theme.typography.headings.heading_five.font.styles|attr('text-decoration') %}
+{% set theme_h5_lineheight = theme.typography.headings.heading_five.line_height %}
+{% set theme_h5_letterspacing = theme.typography.headings.heading_five.letter_spacing %}
+{% set theme_h5_texttransform = theme.typography.headings.heading_five.text_transform %}
+
+/*Heading-6 */
+{% set theme_h6_color = theme.typography.headings.heading_six.font.color %}
+{% set theme_h6_font = theme.typography.headings.heading_six.font.font %}
+{% set theme_h6_fontsize = theme.typography.headings.heading_six.font.size.value ~ 'px' %}
+{% set theme_h6_fontstyle = theme.typography.headings.heading_six.font.styles|attr('font-style') %}
+{% set theme_h6_fontweight = theme.typography.headings.heading_six.font.styles|attr('font-weight') %}
+{% set theme_h6_textdecoration = theme.typography.headings.heading_six.font.styles|attr('text-decoration') %}
+{% set theme_h6_lineheight = theme.typography.headings.heading_six.line_height %}
+{% set theme_h6_letterspacing = theme.typography.headings.heading_six.letter_spacing %}
+{% set theme_h6_texttransform = theme.typography.headings.heading_six.text_transform %}
+
+
+{% set anchor_font_color = theme.typography.link.font.color %}
+{% set anchor_font = theme.typography.link.font.font %}
+{% set anchor_fontsize = theme.typography.link.font.size.value ~ 'px' %}
+{% set anchor_fontweight = theme.typography.link.font.styles|attr('font-weight') %}
+{% set anchor_textdecoration = theme.typography.link.font.styles|attr('text-decoration') %}
+{% set anchor_lineheight = theme.typography.link.line_height %}
+{% set anchor_letterspacing = theme.typography.link.letter_spacing %}
+{% set anchor_texttransform = theme.typography.link.text_transform %}
+
+{% set body_font_color = theme.typography.body_content.font.color %}
+{% set body_font = theme.typography.body_content.font.font %}
+{% set body_fontsize = theme.typography.body_content.font.size.value ~ 'px' %}
+{% set body_fontweight = theme.typography.body_content.font.styles|attr('font-weight') %}
+{% set body_fontstyle = theme.typography.body_content.font.styles|attr('font-style') %}
+{% set body_textdecoration = theme.typography.body_content.font.styles|attr('text-decoration') %}
+{% set body_lineheight = theme.typography.body_content.line_height %}
+{% set body_letterspacing = theme.typography.body_content.letter_spacing %}
+
+{% set sub_font_color = theme.typography.sub_content.font.color %}
+{% set sub_font = theme.typography.sub_content.font.font %}
+{% set sub_fontsize = theme.typography.sub_content.font.size.value ~ 'px' %}
+{% set sub_fontweight = theme.typography.sub_content.font.styles|attr('font-weight') %}
+{% set sub_fontstyle = theme.typography.sub_content.font.styles|attr('font-style') %}
+{% set sub_textdecoration = theme.typography.sub_content.font.styles|attr('text-decoration') %}
+{% set sub_lineheight = theme.typography.sub_content.line_height %}
+{% set sub_letterspacing = theme.typography.sub_content.letter_spacing %}
+
+{###########################################################################}
+{##################   2. Containers / Grid / DnD Areas   ###################}
+{###########################################################################}
+
+.content-wrapper {
+  max-width: {{ container_width }}; 
+}
+body .choose-padding,
+.content-wrapper--vertical-spacing,
+.dnd-section {
+  padding-bottom: {{ dnd_section_padding }};
+  padding-top: {{ dnd_section_padding }};
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.search-trigger {
+  cursor: pointer;
+}
+
+.dnd-section > .row-fluid {
+  max-width: {{ container_width }}; 
+  margin: 0 auto;
+}
+
+.dnd-section-fullwidth > .row-fluid {
+  max-width: 100% !important; 
+  padding: 0px !important; 
+}
+
+.dnd-section.dnd_area-row-0-padding > .row-fluid {
+  padding: 0px !important; 
+}
+
+.dnd-section:nth-child(odd) {
+  background-color: {{ odd_background_color }};
+} 
+
+.dnd-section:nth-child(even) {
+  background-color: {{ even_background_color }};
+} 
+
+
+.display-flex{
+  display: flex !important;
+  display: -webkit-flex !important;
+  align-items: center;
+}
+
+{###########################################################################}
+{###########################   3. Typography   #############################}
+{###########################################################################}
+
+
+a {
+  color: {{ anchor_font_color }};
+  font-family: {{ anchor_font }};
+  font-size: {{ anchor_fontsize }};
+  line-height: {{ anchor_lineheight }}px;
+  font-weight: {{ anchor_fontweight }};
+  text-decoration: {{ anchor_textdecoration }};
+  letter-spacing: {{ anchor_letterspacing }}px;
+  cursor: pointer;
+  text-transform: {{ anchor_texttransform }};
+  word-break: break-word;
+}
+body {
+  color: {{ body_font_color }};
+  font-family: {{ body_font }};
+  font-size: {{ body_fontsize }};
+  line-height: {{ body_lineheight }}px;
+  font-style: {{ body_fontstyle }};
+  font-weight: {{ body_fontweight }};
+  text-decoration: {{ body_textdecoration }};
+  letter-spacing: {{ body_letterspacing }}px;
+} 
+
+p { 
+  word-break: break-word;
+}
+
+a:hover,
+a:focus {
+  color: {{ theme.typography.link.hover_color.color }};
+  cursor: pointer;
+}
+
+a:active {
+  color: {{ theme.typography.links.hover_color.color }} !important;
+}
+
+h1 a,
+h1 {
+  color: {{ theme_h1_color }};
+  font-family: {{ theme_h1_font }};
+  font-size: {{ theme_h1_fontsize }};
+  font-style: {{ theme_h1_fontstyle }};
+  font-weight: {{ theme_h1_fontweight }};
+  text-decoration: {{ theme_h1_textdecoration }};
+  line-height: {{ theme_h1_lineheight }}px;
+  letter-spacing: {{ theme_h1_letterspacing }}px;
+  text-transform: {{ theme_h1_texttransform }};
+}
+
+h2 a,
+h2 {
+  color: {{ theme_h2_color }};
+  font-family: {{ theme_h2_font }};
+  font-size: {{ theme_h2_fontsize }};
+  font-style: {{ theme_h2_fontstyle }};
+  font-weight: {{ theme_h2_fontweight }};
+  text-decoration: {{ theme_h2_textdecoration }};
+  line-height: {{ theme_h2_lineheight }}px;
+  letter-spacing: {{ theme_h2_letterspacing }}px;
+  text-transform: {{ theme_h2_texttransform }};
+}
+
+h3 a,
+h3 {
+  color: {{ theme_h3_color }};
+  font-family: {{ theme_h3_font }};
+  font-size: {{ theme_h3_fontsize }};
+  font-style: {{ theme_h3_fontstyle }};
+  font-weight: {{ theme_h3_fontweight }};
+  text-decoration: {{ theme_h3_textdecoration }};
+  line-height: {{ theme_h3_lineheight }}px;
+  letter-spacing: {{ theme_h3_letterspacing }}px;
+  text-transform: {{ theme_h3_texttransform }};
+}
+
+.hs-search-results__title,
+h4 a,
+h4 {
+  color: {{ theme_h4_color }};
+  font-family: {{ theme_h4_font }};
+  font-size: {{ theme_h4_fontsize }};
+  font-style: {{ theme_h4_fontstyle }};
+  font-weight: {{ theme_h4_fontweight }};
+  text-decoration: {{ theme_h4_textdecoration }};
+  line-height: {{ theme_h4_lineheight }}px;
+  letter-spacing: {{ theme_h4_letterspacing }}px;
+  text-transform: {{ theme_h4_texttransform }};
+}
+
+h5 a,
+h5 {
+  color: {{ theme_h5_color }};
+  font-family: {{ theme_h5_font }};
+  font-size: {{ theme_h5_fontsize }};
+  font-style: {{ theme_h5_fontstyle }};
+  font-weight: {{ theme_h5_fontweight }};
+  text-decoration: {{ theme_h5_textdecoration }};
+  line-height: {{ theme_h5_lineheight }}px;
+  letter-spacing: {{ theme_h5_letterspacing }}px;
+  text-transform: {{ theme_h5_texttransform }};
+}
+
+h6 a,
+h6 {
+  color: {{ theme_h6_color }};
+  font-family: {{ theme_h6_font }};
+  font-size: {{ theme_h6_fontsize }};
+  font-style: {{ theme_h6_fontstyle }};
+  font-weight: {{ theme_h6_fontweight }};
+  text-decoration: {{ theme_h6_textdecoration }};
+  line-height: {{ theme_h6_lineheight }}px;
+  letter-spacing: {{ theme_h6_letterspacing }}px;
+  text-transform: {{ theme_h6_texttransform }};
+} 
+ 
+focus {
+  outline: none;
+}
+ 
+/*============================ COMMEN CSS AREA END ==========================*/
+
+
+/* Notification Bar */ 
+{% if theme.notification_bar.display_option == "sticky" %}
+.notification-bar .alert {
+  position: fixed !important;
+}
+{% else theme.notification_bar.display_option == "fixed" %}
+.notification-bar .alert {
+  position: relative !important;
+}
+{% endif %}
+ 
+{###########################################################################}
+{##########################   8. Media queries   ###########################}
+{###########################################################################} 
+
+/*=============================== MEDIA QUERIES AREA START ==========================*/
+@media(max-width: 1150px) {
+  .menu-arrow:before {
+    display: none !important;
+  }
+  .level-2 .has-submenu ul {
+    position: inherit !important;
+    visibility: inherit !important;
+    left: 0 !important;
+    opacity: 1 !important;
+  }
+}
+
+@media(min-width: 992px) {
+  .dnd-module .span12 .span6,
+  .dnd-module .span12 .span4,
+  .dnd-module .span12 .span3 {
+    margin-top: 30px; 
+  }
+  .dnd-module .span12 .span3:first-child,
+  .dnd-module .span12 .span3:nth-child(2),
+  .dnd-module .span12 .span3:nth-child(3),
+  .dnd-module .span12 .span3:nth-child(4),
+  .dnd-module .span12 .span4:first-child,
+  .dnd-module .span12 .span4:nth-child(2),
+  .dnd-module .span12 .span4:nth-child(3),
+  .dnd-module .span12 .span6:first-child,
+  .dnd-module .span12 .span6:nth-child(2) {
+    margin-top: 0;
+  }
+  .ml0 {
+    margin-left: 0 !important;
+  }
+
+  .mt0 {
+    margin-top: 0 !important;
+  }
+
+  .clr-left {
+    clear: left;
+  } 
+
+} 
+@media(max-width: 980px) {
+  .splide__pagination {
+    bottom: -1.5em !important; 
+  }
+}
+@media(max-width: 991px) {
+
+  .dnd-section > .row-fluid > .span6:first-child.dnd-column {
+    padding-right: 0;
+  } 
+  .creative-slider-1 .float-right {
+    padding: 0 15px 50px 15px !important;
+  }
+  .hst-pop-modal.modal {
+    width: 90% !important;
+  }
+  .unsubs-pg-space,
+  .systems-page,
+  .subs-pref-space,
+  .error-page {
+    padding-top: {{ theme.header.mob_blow_space }}px !important;
+  } 
+  .level-2 .has-submenu ul {
+    position: inherit !important;
+    visibility: inherit !important;
+    left: 0 !important;
+    opacity: 1 !important;
+  }
+  .menu-arrow::before {
+    display: none !important;
+  } 
+
+}
+
+@media (min-width:768px) and (max-width: 991px) {  
+  .dnd-column.span8:last-child {
+    margin-bottom: 0;
+  }
+  .dnd-column.span8 .span6 {
+    margin-top: 20px;
+  }
+  .dnd-column.span8 .span6:first-child {
+    margin-top: 0;
+  }
+  /* 2-COLUMN, 4-COLUMN, 5+-COLUMN */  
+  .hs_cos_wrapper > .span12 > .span2,
+  .hs_cos_wrapper > .span12 > .span3, 
+  .hs_cos_wrapper > .span12 > .span6{
+    width: 48.618784527%;
+    margin-top: 30px !important;   
+  }
+  .hs_cos_wrapper > .span12 > .span2:first-child,
+  .hs_cos_wrapper > .span12 > .span2:nth-child(2) {
+    margin-top: 0 !important;
+  }
+  .about-col-left {
+    margin-bottom: 80px !important;
+  }
+  .hs_cos_wrapper > .span12.res-full-width .span6,
+  .hs_cos_wrapper > .span12.res-full-width .span6:nth-child(2) {
+    width: 100% !important;
+    margin-top: 30px !important;
+  }
+  .col-res-full-width{
+    width: 100% !important;
+  }
+  /* Remove margin top for first row columns */
+  .dnd-row > .row-fluid > div:first-child,  
+  .hs_cos_wrapper > .span12 > .span4:first-child,
+  .hs_cos_wrapper > .span12 > .span6:first-child,
+  .hs_cos_wrapper > .span12 > .span6:nth-child(2),
+  .hs_cos_wrapper > .span12 > .span3:first-child,
+  .hs_cos_wrapper > .span12 > .span3:nth-child(2),
+  .res-mt0{
+    margin-top: 0 !important; 
+  }  
+
+  /* Remove margin left for first columns in a row */
+  .hs_cos_wrapper > .span12 > .span3:nth-child(odd),
+  .hs_cos_wrapper > .span12.res-full-width .span6,
+  .hs_cos_wrapper > .span12 > .span2:nth-child(odd),
+  .col-res-full-width{
+    margin-left: 0 !important; 
+  }  
+
+
+}
+@media (min-width:481px) and (max-width: 991px) {
+  .post-listing .post-items.span6 {
+    width: 360px !important;
+    margin: 0 auto !important;
+    margin-bottom: 30px !important;
+  }
+
+  .post-listing .post-items.span6:nth-child(3),
+  .post-listing .post-items.span6:nth-child(5),
+  .post-listing .post-items.span6:nth-child(7),
+  .post-listing .post-items.span6:nth-child(9) {
+    margin-left: auto !important;
+  }
+
+}
+@media(max-width: 767px) {
+  .bg-img-property-cta.cta-2-content,
+  .content-wrapper--vertical-spacing,
+  .dnd-section,
+  body .choose-padding {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+  .dnd_areaabout-row-0-padding {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+    padding-left:0px !important;
+    padding-right:0px !important;
+  }    
+  .dnd-module .span12 .span12,
+  .dnd-module .span12 .span4,
+  .dnd-module .span12 .span3 {
+    margin-top: 30px;
+  }  
+  .cta-2-content-width > div {
+    width: 100% !important;
+  }
+  .tm-module {
+    width: 100%;
+  }
+  .tq-inner {
+    width: 100%;
+  }
+  .subs-form-sec .subs-form-sec-head { 
+    text-align: center;
+  }
+  .subs-form-sec .subs-form-sec-content { 
+    text-align: center;
+  }
+  .subs-form-sec .subs-form-sec-img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .head-parallax-left {
+    text-align: right !important;
+    margin-top: 30px;
+  }
+  .border-cls-para {
+    border: 0 !important;
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+  }
+  .border-cls-para h1 {
+    font-size: 65px !important;
+    line-height: 75px !important;
+  }
+  .border-cls-para > p.sub-heading-content {
+    font-size: 35px !important;
+    line-height: 45px !important;
+  }
+}
+@media(min-width: 576px) and (max-width: 767px){
+  h1 {
+    font-size: 45px;
+    line-height: 55px;
+  }
+  h2 {
+    font-size: 35px;
+    line-height: 45px;
+  }
+  h3 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  h4 {
+    font-size: 22px;
+    line-height: 32px;
+  }
+  h5 {
+    font-size: 19px;
+    line-height: 29px;
+  }
+  h6 {
+    font-size: 15px;
+    line-height: 25px;
+  }
+}
+@media(max-width: 575px) { 
+
+  h1 {
+    font-size: 35px;
+    line-height: 45px;
+  }
+  .tm-module .tm-main-heading,
+  h2 {
+    font-size: 30px !important;
+    line-height: 40px !important;
+  }
+  h3 {
+    font-size: 25px;
+    line-height: 35px;
+  }
+  h4 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  h5 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  h6 {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  body {
+    font-size: 13px !important;
+    line-height: 23px !important;
+  } 
+  .abt-sec {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {  
+  .common-title-space {
+    padding-bottom: 20px !important;
+  } 
+}
+@media (max-width: 460px) {  
+  .p-logo-15 {
+    padding: 20px 15px;
+  }
+}
+/*=============================== MEDIA QUERIES AREA END =========================*/
+body .widget-contact ul li i,
+body .widget-quicklink ul.menu-ft li a:hover {
+  color: {{primary_color}};
+}
+
+body .widget-quicklink ul.menu-ft li a:hover:before {
+  background-color:  {{primary_color}};
+}

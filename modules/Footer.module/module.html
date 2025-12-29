@@ -1,0 +1,187 @@
+<footer class="footer-area container-fullwidth">
+  <div class="footer__container">
+    <div class="row-fluid">
+      <div class="span4 ft">
+        <div class="widget-footer">
+          <div class="widget-about">
+            <div class="logo-ft">
+              {% unless (module.footer_options.about.logo_options.link_url is string_startingwith "http") or (module.footer_options.about.logo_options.link_url is string_startingwith "/") or (module.footer_options.about.logo_options.link_url is string_startingwith "mailto") or (module.footer_options.about.logo_options.link_url is string_startingwith "#") or !module.footer_options.about.logo_options.link_url %}
+              {% set link_url = "//" ~ module.footer_options.about.logo_options.link_url %}
+              {% else %} 
+              {% set link_url = module.footer_options.about.logo_options.link_url || "" %}
+              {% endunless %}
+
+              {% if module.footer_options.about.logo_options.img.override_inherited_src && module.footer_options.about.logo_options.img.src %}
+              {% logo "hs_logo_widget"
+                override_inherited_src='{{ module.footer_options.about.logo_options.img.override_inherited_src  }}',
+                alt='{{ module.footer_options.about.logo_options.img.alt }}',
+                src='{{ module.footer_options.about.logo_options.img.src }}',
+                link='{{ link_url }}',
+                width='{{ module.footer_options.about.logo_options.img.width }}',
+                height='{{ module.footer_options.about.logo_options.img.height }}',
+                open_in_new_tab='{{ module.footer_options.about.logo_options.open_in_new_tab }}'
+              %} 
+              
+              {% elif module.footer_options.about.logo_options.img.override_inherited_src && !module.footer_options.about.logo_options.img.src %}
+              {% logo "hs_logo_widget"
+                heading_level="{{ module.footer_options.about.logo_options.heading_level }}",
+                link='{{ link_url }}',
+                open_in_new_tab='{{ module.footer_options.about.logo_options.open_in_new_tab }}'
+                override_inherited_src='{{ module.footer_options.about.logo_options.img.override_inherited_src }}',
+                src='',
+                suppress_company_name='{{ module.footer_options.about.logo_options.img.suppress_company_name }}',
+              %}
+              
+              {% elif brand_settings.primaryLogo %} 
+              {% logo "hs_logo_widget" 
+                link='{{brand_settings.primaryLogo.link}}',
+                alt='{{brand_settings.primaryLogo.alt}}',
+                open_in_new_tab='{{ module.footer_options.about.logo_options.open_in_new_tab }}'
+                src='{{brand_settings.primaryLogo.src}}',
+                width='{{brand_settings.primaryLogo.width}}',
+                height='{{brand_settings.primaryLogo.height}}',
+              %}  
+              
+              {% else %} 
+              {% logo "hs_logo_widget"
+                  link='{{ link_url }}',
+                  open_in_new_tab='{{ module.footer_options.about.logo_options.open_in_new_tab }}'
+                %}
+              {% endif %}
+
+            </div>
+            <div class="about-ft">
+              {{ module.footer_options.about.content }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="span4 ft">
+        <div class="widget-footer">
+          <div class="widget-quicklink">
+            <div class="title-wd-ft">
+              {{ module.footer_options.quick_links.heading }}
+            </div>
+            <div class="flex">
+              {{ module.footer_options.quick_links.content }}
+            </div>
+          </div> 
+        </div>
+      </div>
+       
+      <div class="span4 ft">
+        <div class="widget-footer">
+          <div class="widget-contact">
+            {{ module.footer_options.cantact_us.heading }}
+            {{ module.footer_options.cantact_us.content }}
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<section class="footer-bottom-area">
+  <div class="footer__container">
+    <div class="row-fluid">
+      <div class="span12" style="text-align: center;"> 
+        <div class="copyright">
+          © {{ year }} {% if site_settings.company_name %}, {{ site_settings.company_name }}{% endif %} {{ module.footer_options.copyright_items.text }}.
+        </div>
+      </div> 
+    </div>
+  </div>
+</section>
+
+{# Theme override module styles #}
+
+{% if module.style.override_default_style %}
+{% require_css %}
+<style>
+  #hs_cos_wrapper_{{ name }} .footer-area {
+    background-color: {{ module.style.background_color.color }}; 
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .widget-about .about-ft p {
+    color: {{ module.style.about_content_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .widget-footer h4 {
+    color: {{ module.style.heading_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .widget-footer h4 span {
+    color: {{ module.style.colored_heading_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .widget-quicklink ul.menu-ft li a {
+    color: {{ module.style.list_text_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .widget-quicklink ul.menu-ft li a::before {
+    background-color: {{ module.style.list_text_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .widget-quicklink ul.menu-ft li a:hover {
+    color: {{ module.style.quick_link_hover_list_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .widget-quicklink ul.menu-ft li a:hover::before {
+    background-color: {{ module.style.quick_link_hover_list_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .widget-tags ul.tags-list li a {
+    background-color: rgba({{ module.style.tag_options.background_color.color|convert_rgb }}, {{ module.style.tag_options.background_color.opacity / 100 }});
+    color: {{ module.style.tag_options.text_color.color }};
+    {{ module.style.tag_options.border.css }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .widget-tags ul.tags-list li a:hover {
+    background-color: rgba({{ module.style.tag_options.hover.background_color.color|convert_rgb }}, {{ module.style.tag_options.hover.background_color.opacity / 100 }});
+    color: {{ module.style.tag_options.hover.text_color.color }};
+    {{ module.style.tag_options.hover.border.css }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area aside.post-single-ft .post-content h6 a {
+    color: {{ module.style.recent_news_options.heading_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area aside.post-single-ft .post-content .date-post {
+    color: {{ module.style.recent_news_options.date_text_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .widget-contact ul li {
+    color: {{ module.style.contact_options.list_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .widget-contact ul li i {
+    color: {{ module.style.contact_options.icon_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .hs-input {
+    background-color: rgba({{ module.style.subscribe_form_items.field_background_color.color|convert_rgb }}, {{ module.style.subscribe_form_items.field_background_color.opacity / 100 }});
+    color: {{ module.style.subscribe_form_items.field_input_text_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .hs-form .hs-form-field label {
+    color: {{ module.style.subscribe_form_items.label_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .hs-input::placeholder {
+    color: {{ module.style.subscribe_form_items.placeholder_text_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .hs_email.hs-email.hs-fieldtype-text.field.hs-form-field > div::after {
+    color: {{ module.style.subscribe_form_items.field_input_icon_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .hs-form .hs-form-field .hs-error-msg {
+    color: {{ module.style.subscribe_form_items.error_massage_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-area .submitted-message {
+    color: {{ module.style.subscribe_form_items.success_massage_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-bottom-area {
+    background-color: {{ module.style.copyright_options.background_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-bottom-area .copyright {
+    color: {{ module.style.copyright_options.text_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-bottom-area .social-ft li a {
+    background-color: rgba({{ module.style.copyright_options.social_share_items.background_color.color|convert_rgb }}, {{ module.style.copyright_options.social_share_items.background_color.opacity / 100 }});
+    {{ module.style.copyright_options.social_share_items.border.css }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-bottom-area .social-ft li a svg {
+    fill: {{ module.style.copyright_options.social_share_items.icon_color.color }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-bottom-area .social-ft li a:hover {
+    background-color: rgba({{ module.style.copyright_options.social_share_items.hover.background_color.color|convert_rgb }}, {{ module.style.copyright_options.social_share_items.hover.background_color.opacity / 100 }});
+    {{ module.style.copyright_options.social_share_items.hover.border.css }};
+  }
+  #hs_cos_wrapper_{{ name }} .footer-bottom-area .social-ft li a:hover svg {
+    fill: {{ module.style.copyright_options.social_share_items.hover.icon_color.color }};
+  }
+</style>
+{% end_require_css %}
+{% endif %}

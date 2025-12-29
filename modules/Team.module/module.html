@@ -1,0 +1,71 @@
+<div id="{{ module.id_name }}" class="{{ module.class }}"> 
+
+  <div class="span12 res-width team-four team-area">
+    {% set columns = 12 %}  
+    {% for item in module.team_group %}
+
+    {% set col = loop.length <= 4 && loop.index < 4 ? columns|divide(loop.length) : 3 %} 
+    {% set ml0 = loop.index0 % 4 == 0 ? 'ml0 clr-left' : '' %} 
+    {% set dmt0 = loop.index0 < 4 ? 'mt0' : '' %}
+
+    {% if item.display_content || item.display_image || item.display_mamber_name || item.display_designation %}
+    <div class="span{{col}} {{ml0}} {{dmt0}}">
+      <div class=" {{ boxhover }} {{ teamcolspace }} team-col center-align res-team-marg">        
+        {% if item.display_image %}
+        <div class="team-img1">
+          {% if item.image.src %}
+          {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+          {% if item.image.size_type == 'auto' %}
+          {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+          {% elif item.image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ item.image.max_width }}px; max-height: {{ item.image.max_height }}px"' %}
+          {% endif %}
+          <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ sizeAttrs }} style="border-radius:{{ item.image_border_radius }}%;">
+          {% endif %}
+        </div>
+        {% endif %}
+        {% if item.display_mamber_name %}
+        <h4 class="section-grp-margin-bottom">
+          {{ item.member_name }}
+        </h4>
+        {% endif %}
+        {% if item.display_designation %}
+        <p class="designation section-grp-margin-bottom">
+          {{ item.designation }}
+        </p>
+        {% endif %}
+        {% if item.display_content %}
+        <p style="margin-top: 10px; margin-bottom: 10px;">
+          {{ item.content }}
+        </p>
+        {% endif %}
+      </div>
+
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {# Theme override module styles #}
+  {% if module.style.override_default_style %}
+  {% require_css %}
+  <style>   
+    #hs_cos_wrapper_{{ name }} .team-four .team-col {
+      background-color: rgba({{ module.style.team_with_top_social_icons.background_color.color | convert_rgb }}, {{ module.style.team_with_top_social_icons.background_color.opacity / 100 }});
+    }
+    #hs_cos_wrapper_{{ name }} .team-four .team-col h4 {
+      color: {{ module.style.team_with_top_social_icons.author_text_color.color }};
+    }
+    #hs_cos_wrapper_{{ name }} .team-four .team-col .designation {
+      color: {{ module.style.team_with_top_social_icons.designation_text_color.color }};
+    }
+    #hs_cos_wrapper_{{ name }} .team-four .team-col p {
+      color: {{ module.style.team_with_top_social_icons.content_text_color.color }};
+    }
+    #hs_cos_wrapper_{{ name }} .team-four .team-img img {
+      border-radius:  {{ module.style.team_with_top_social_icons.image_border_radius }}%;
+      {{ module.style.team_with_top_social_icons.image_border.css }};
+    }
+  </style>
+  {% end_require_css %}
+  {% endif %}  
+</div>

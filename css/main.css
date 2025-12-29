@@ -1,0 +1,5 @@
+/* Theme base styles */
+
+{% include './objects/_layout.css' %} 
+{% include './components/_header.css' %}
+{% include './components/_footer.css' %} 

@@ -1,0 +1,518 @@
+[ {
+  "id" : "94529526-e0e2-27ae-9ed5-fc2b2c8c2292",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "92600d0d-8f6e-d6d3-c26f-fd0395938aee",
+    "name" : "override_default_style",
+    "label" : "Override default style",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "f6b0cf98-5ad2-d577-a2e1-6d7f2918de86",
+    "name" : "background_color",
+    "label" : "Background color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "92600d0d-8f6e-d6d3-c26f-fd0395938aee",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "show_opacity" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#00374d",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "5a4520e3-ee8d-70c0-1ea8-fd5d6ad1c609",
+    "name" : "about_content_color",
+    "label" : "About content color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "92600d0d-8f6e-d6d3-c26f-fd0395938aee",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "show_opacity" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#d2d2d2",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "54f8c214-150a-ae80-e6a9-8ef612349d1a",
+    "name" : "heading_color",
+    "label" : "Heading color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "92600d0d-8f6e-d6d3-c26f-fd0395938aee",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "show_opacity" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "02982991-e218-8c15-0226-b32ab7ebda48",
+    "name" : "list_text_color",
+    "label" : "Quick link list color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "92600d0d-8f6e-d6d3-c26f-fd0395938aee",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "show_opacity" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#bfcadc",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "5b13902b-bb06-70e0-08ea-672685554d9e",
+    "name" : "quick_link_hover_list_color",
+    "label" : "Quick link hover list color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "92600d0d-8f6e-d6d3-c26f-fd0395938aee",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "show_opacity" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fcb100",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "02131b5c-ac31-4fd0-163b-d75c465d9e95",
+    "name" : "contact_options",
+    "label" : "Contact options",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "92600d0d-8f6e-d6d3-c26f-fd0395938aee",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "e7bf661d-c4c9-f41b-a573-bd0c8c140428",
+      "name" : "icon_color",
+      "label" : "Icon color",
+      "required" : false,
+      "locked" : false,
+      "show_opacity" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#fcb100",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "6e4c3494-032b-bf40-7dd8-6538dbacd799",
+      "name" : "list_color",
+      "label" : "List color",
+      "required" : false,
+      "locked" : false,
+      "show_opacity" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#bfcadc",
+        "opacity" : 100
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "icon_color" : {
+        "color" : "#fcb100",
+        "opacity" : 100
+      },
+      "list_color" : {
+        "color" : "#bfcadc",
+        "opacity" : 100
+      }
+    }
+  }, {
+    "id" : "ec44d71a-07a4-5059-5cf2-4cf95207cca1",
+    "name" : "copyright_options",
+    "label" : "Copyright options",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "92600d0d-8f6e-d6d3-c26f-fd0395938aee",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "08262739-e569-095f-366a-15602a133e30",
+      "name" : "background_color",
+      "label" : "Background color",
+      "required" : false,
+      "locked" : false,
+      "show_opacity" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#ffffff",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "e156d6fc-9eb9-f651-eb7c-8d83951884bc",
+      "name" : "text_color",
+      "label" : "Text color",
+      "required" : false,
+      "locked" : false,
+      "show_opacity" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#333",
+        "opacity" : 100
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "background_color" : {
+        "color" : "#ffffff",
+        "opacity" : 100
+      },
+      "text_color" : {
+        "color" : "#333",
+        "opacity" : 100
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "override_default_style" : false,
+    "background_color" : {
+      "color" : "#00374d",
+      "opacity" : 100
+    },
+    "about_content_color" : {
+      "color" : "#d2d2d2",
+      "opacity" : 100
+    },
+    "heading_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "list_text_color" : {
+      "color" : "#bfcadc",
+      "opacity" : 100
+    },
+    "quick_link_hover_list_color" : {
+      "color" : "#fcb100",
+      "opacity" : 100
+    },
+    "contact_options" : {
+      "icon_color" : {
+        "color" : "#fcb100",
+        "opacity" : 100
+      },
+      "list_color" : {
+        "color" : "#bfcadc",
+        "opacity" : 100
+      }
+    },
+    "copyright_options" : {
+      "background_color" : {
+        "color" : "#ffffff",
+        "opacity" : 100
+      },
+      "text_color" : {
+        "color" : "#333",
+        "opacity" : 100
+      }
+    }
+  }
+}, {
+  "id" : "c52f034f-a384-0702-d344-902f50e50187",
+  "name" : "footer_options",
+  "label" : "Footer options",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "3d54e051-07ae-9278-f662-480b0059184e",
+    "name" : "about",
+    "label" : "About",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "68d8cc54-f591-bca4-f150-0db4a4141962",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur non odio ut aliquet libero, posuere in vestibulum.</p>"
+    }, {
+      "id" : "8183b75b-900c-81fe-d771-6088868b02ab",
+      "name" : "logo_options",
+      "label" : "Logo options",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "2cca2d8b-b6f7-eb8c-3668-da0dac80abca",
+        "name" : "img",
+        "label" : "Logo",
+        "required" : false,
+        "locked" : false,
+        "show_loading" : true,
+        "type" : "logo",
+        "display_width" : null,
+        "default" : {
+          "override_inherited_src" : false,
+          "src" : null,
+          "alt" : null,
+          "suppress_company_name" : true
+        }
+      }, {
+        "id" : "7a8661a2-0b34-e026-5d3c-28cb31f29869",
+        "name" : "link_url",
+        "label" : "Link URL",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "461d596f-2aa1-24af-e431-c5a6ee8b36a0",
+        "name" : "open_in_new_window",
+        "label" : "Open link in new tab when visitors click",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      }, {
+        "id" : "800b334a-df3f-cd6a-e9db-e5c925f7804b",
+        "name" : "heading_level",
+        "label" : "Heading level",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ], [ "h3", "H3" ], [ "h4", "H4" ], [ "h5", "H5" ], [ "h6", "H6" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "h2"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "img" : {
+          "override_inherited_src" : false,
+          "src" : null,
+          "alt" : null,
+          "suppress_company_name" : true
+        },
+        "open_in_new_window" : false,
+        "heading_level" : "h2"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur non odio ut aliquet libero, posuere in vestibulum.</p>",
+      "logo_options" : {
+        "img" : {
+          "override_inherited_src" : false,
+          "src" : null,
+          "alt" : null,
+          "suppress_company_name" : true
+        },
+        "open_in_new_window" : false,
+        "heading_level" : "h2"
+      }
+    }
+  }, {
+    "id" : "b7e549a0-97a8-0c4a-5d41-57bbd37c6400",
+    "name" : "quick_links",
+    "label" : "Quick links",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "c77a4fa1-c511-930c-5aef-3785c2f6dab1",
+      "name" : "heading",
+      "label" : "Heading",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<h4>QUICK LINKS</h4>"
+    }, {
+      "id" : "df733ad0-badb-0de5-40ff-33a395d3bc7f",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<ul class=\"menu-ft two-column\">\n<li><a href=\"#\" title=\"\">News &amp; Tips</a></li>\n<li><a href=\"about-us.html\" title=\"\">About Us</a></li>\n<li><a href=\"#\" title=\"\">Trademark</a></li>\n<li><a href=\"#\" title=\"\">Latest Events</a></li>\n<li><a href=\"#\" title=\"\">Vision and direction</a></li>\n<li><a href=\"#\" title=\"\">Get Offers</a></li>\n<li><a href=\"contact-us.html\" title=\"\">Contact Us</a></li>\n</ul>"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "heading" : "<h4>QUICK LINKS</h4>",
+      "content" : "<ul class=\"menu-ft two-column\">\n<li><a href=\"#\" title=\"\">News &amp; Tips</a></li>\n<li><a href=\"about-us.html\" title=\"\">About Us</a></li>\n<li><a href=\"#\" title=\"\">Trademark</a></li>\n<li><a href=\"#\" title=\"\">Latest Events</a></li>\n<li><a href=\"#\" title=\"\">Vision and direction</a></li>\n<li><a href=\"#\" title=\"\">Get Offers</a></li>\n<li><a href=\"contact-us.html\" title=\"\">Contact Us</a></li>\n</ul>"
+    }
+  }, {
+    "id" : "77cb3e17-a587-f5e6-24bd-50b2e83800df",
+    "name" : "cantact_us",
+    "label" : "Cantact us",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "7319e7d7-a2e6-c014-b921-b67e22e30e18",
+      "name" : "heading",
+      "label" : "Heading",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<h4>CONTACT US</h4>"
+    }, {
+      "id" : "3cd2857d-15b5-fafd-816d-dfc6eaba3793",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<ul class=\"contact-list\">\n<li class=\"contact-phone\"><i class=\"fa-solid fa-phone-volume\"></i> Phone: +123-456-7890</li>\n<li class=\"contact-email\"><i class=\"fa-solid fa-envelope\"></i>Email: Example@gamil.com</li>\n<li class=\"contact-address\"><i class=\"fa-sharp fa-solid fa-location-arrow\"></i>Address: LouiseAve city hall, nashville, TN37203</li>\n</ul>"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "heading" : "<h4>CONTACT US</h4>",
+      "content" : "<ul class=\"contact-list\">\n<li class=\"contact-phone\"><i class=\"fa-solid fa-phone-volume\"></i> Phone: +123-456-7890</li>\n<li class=\"contact-email\"><i class=\"fa-solid fa-envelope\"></i>Email: Example@gamil.com</li>\n<li class=\"contact-address\"><i class=\"fa-sharp fa-solid fa-location-arrow\"></i>Address: LouiseAve city hall, nashville, TN37203</li>\n</ul>"
+    }
+  }, {
+    "id" : "b21eb529-d832-583d-1a88-2997de2177e5",
+    "name" : "copyright_items",
+    "label" : "Copyright items",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "0fa52cdc-f3a8-4054-c7cf-54ff0372edc9",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "All Rights Reserved"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "text" : "All Rights Reserved"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "about" : {
+      "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur non odio ut aliquet libero, posuere in vestibulum.</p>",
+      "logo_options" : {
+        "img" : {
+          "override_inherited_src" : false,
+          "src" : null,
+          "alt" : null,
+          "suppress_company_name" : true
+        },
+        "open_in_new_window" : false,
+        "heading_level" : "h2"
+      }
+    },
+    "quick_links" : {
+      "heading" : "<h4>QUICK LINKS</h4>",
+      "content" : "<ul class=\"menu-ft two-column\">\n<li><a href=\"#\" title=\"\">News &amp; Tips</a></li>\n<li><a href=\"about-us.html\" title=\"\">About Us</a></li>\n<li><a href=\"#\" title=\"\">Trademark</a></li>\n<li><a href=\"#\" title=\"\">Latest Events</a></li>\n<li><a href=\"#\" title=\"\">Vision and direction</a></li>\n<li><a href=\"#\" title=\"\">Get Offers</a></li>\n<li><a href=\"contact-us.html\" title=\"\">Contact Us</a></li>\n</ul>"
+    },
+    "cantact_us" : {
+      "heading" : "<h4>CONTACT US</h4>",
+      "content" : "<ul class=\"contact-list\">\n<li class=\"contact-phone\"><i class=\"fa-solid fa-phone-volume\"></i> Phone: +123-456-7890</li>\n<li class=\"contact-email\"><i class=\"fa-solid fa-envelope\"></i>Email: Example@gamil.com</li>\n<li class=\"contact-address\"><i class=\"fa-sharp fa-solid fa-location-arrow\"></i>Address: LouiseAve city hall, nashville, TN37203</li>\n</ul>"
+    },
+    "copyright_items" : {
+      "text" : "All Rights Reserved"
+    }
+  }
+} ]

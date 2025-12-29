@@ -1,0 +1,123 @@
+<!--
+templateType: global_partial
+label: Page Footer
+-->
+<footer class="footer">
+  <div class="row-fluid">
+    {% dnd_area "footer"
+    label="Footer", 
+  %}
+    {% dnd_section
+		padding={
+			'top': 0,
+			'bottom': 0,
+      'left': 0,
+      'right': 0
+			},
+      background_color='#333333'
+		%}
+    {% dnd_column %}
+    {% dnd_row %}
+    {% dnd_module path='../../modules/Footer' 
+        footer_options = {
+             "copyright_items" : {
+      "social_share" : [ {
+        "icon" : {
+          "name" : "Facebook F",
+          "unicode" : "f39e",
+          "type" : "REGULAR"
+        },
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "icon" : {
+          "name" : "What's App", 
+          "type" : "SOLID"
+        },
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "icon" : {
+          "name" : "Twitter", 
+          "type" : "REGULAR"
+        },
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "icon" : {
+          "name" : "Instagram", 
+          "type" : "REGULAR"
+        },
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "icon" : {
+          "name" : "Linkedin in", 
+          "type" : "REGULAR"
+        },
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ],
+      "text" : "All Rights Reserved"
+    }
+    }
+      %}
+    {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {% end_dnd_area %}
+  </div>
+
+
+  {# Scroll to top link #}
+  {% if theme.miscellaneous.scroll_to_top.display_scroll_to_top is equalto true %}
+  <a href="javascript:" class="scroll-top show" id="return-to-top">
+        <i class="arrow-top fa-solid fa-arrow-up-long"></i> 
+        <i class="arrow-bottom fa-solid fa-arrow-up-long"></i>
+    </a>
+  {% endif %}
+  {% if theme.notification_bar.display_notification_bar is equalto true %}
+  {% if theme.notification_bar.display_location is equalto "footer" %}
+  <div class="footer-notification">
+    {% module "Side-panel" path="../../modules/Notification-bar" %} 
+  </div>
+  {% endif %}
+  {% endif %}
+</footer>

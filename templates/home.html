@@ -1,0 +1,26 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Home
+screenshotPath: ../images/template-previews/pages/home.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<main class="body-container-wrapper">
+
+  {% dnd_area "dnd_area" class='body-container body-container__homepage', label='Main section' %} 
+ 
+  <!--===================================== ABOUT US AREA START =====================================-->
+
+  {% include_dnd_partial path="../sections/about-us.html" %}
+
+  <!--===================================== ABOUT US AREA END =====================================-->
+  <!--===================================== TEAM START =====================================-->
+  
+  {% include_dnd_partial path="../sections/team.html" %}
+  
+  <!--===================================== TEAM END =====================================--> 
+  {% end_dnd_area %}
+</main>
+{% endblock body %}
